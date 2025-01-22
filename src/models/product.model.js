@@ -17,6 +17,7 @@ const productSchema = new mongoose.Schema({
   },
   category: {
     type: String,
+    enum:["electronics","fashion","grocery"],
     required: [true, 'Product category is required'],
   },
   brand: {
@@ -34,7 +35,11 @@ const productSchema = new mongoose.Schema({
       type: String,  //cloudinary
       required: [true, 'Product image URL is required'],
     },
-  ]
+  ],
+  owner:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:"User"
+  }
 })
 
 export const Product=mongoose.model("Product",productSchema)
