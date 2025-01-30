@@ -1,4 +1,4 @@
-export const asynHandler=(requestHandler)=>{
+export const asyncHandler=(requestHandler)=>{
     try {
         return async (req,res,next) => {
             await requestHandler(req,res,next)
