@@ -4,7 +4,7 @@ const reviewSchema= new Schema({
     comment:{
         type:String
     },
-    rateing:{
+    rating:{
         type:Number,
         required:true,
         min:1,
@@ -22,4 +22,4 @@ const reviewSchema= new Schema({
     }
 },{timestamps:true})
 
-export const Review=mongoose.model("Product",reviewSchema)
+export const Review=mongoose.model("Review",reviewSchema)
